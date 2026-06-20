@@ -37,3 +37,6 @@ backend/uploads/
 # Environment files
 .env
 .env.*
+
+backend/uploads/*
+!backend/uploads/.gitkeep
