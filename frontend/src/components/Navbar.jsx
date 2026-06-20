@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { LayoutDashboard, Users, User as UserIcon, Bell, LogOut } from 'lucide-react'
 import { useAuth } from '../context/AuthContext.jsx'
 import NotificationBadge from './NotificationBadge.jsx'
+import { BASE_URL } from '../api/api'
 
 export default function Navbar() {
   const { user, logout } = useAuth()
@@ -57,7 +58,7 @@ export default function Navbar() {
                   <img
                     src={
                       user.profileImage
-                        ? `http://localhost:8080${user.profileImage}`
+                        ? `${BASE_URL}${user.profileImage}`
                         : `https://ui-avatars.com/api/?name=${encodeURIComponent(
                             user.fullName
                           )}&background=random`

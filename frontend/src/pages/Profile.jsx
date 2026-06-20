@@ -4,6 +4,7 @@ import { User, Mail, FileText, Camera, Check, AlertCircle, Save, Palette } from 
 import { useAuth } from '../context/AuthContext.jsx'
 import { useTheme } from '../context/ThemeContext.jsx'
 import { updateProfile, uploadProfileImage } from '../api/userApi'
+import { BASE_URL } from '../api/api'
 import AlertMessage from '../components/AlertMessage.jsx'
 
 export default function Profile() {
@@ -73,7 +74,7 @@ export default function Profile() {
             <img
               src={
                 previewImage || (user?.profileImage
-                  ? `http://localhost:8080${user.profileImage}`
+                  ? `${BASE_URL}${user.profileImage}`
                   : `https://ui-avatars.com/api/?name=${encodeURIComponent(fullName || 'User')}&background=6366f1&color=fff&size=128`)
               }
               alt="Profile"
